@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+
 def fill(link):
     browser = webdriver.Chrome()
     browser.implicitly_wait(3)
@@ -13,6 +14,7 @@ def fill(link):
 
     return browser.find_element_by_tag_name("h1").text  
 
+
 class TestLink():
     def test_link1(self):
         link1 = "http://suninjuly.github.io/registration1.html"
@@ -21,6 +23,7 @@ class TestLink():
     def test_link2(self):
         link2 = "http://suninjuly.github.io/registration2.html"
         assert fill(link2) == "Congratulations! You have successfully registered!", "NoSuchElementException"
+
 
 if __name__ == "__main__":
     browser.quit()
